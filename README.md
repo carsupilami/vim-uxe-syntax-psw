@@ -60,6 +60,9 @@ Mit `fileencodings` wie oben öffnet Vim beide Varianten richtig und speichert i
 Kodierung zurück (`:set fenc?` zeigt sie, `:set bomb?` die BOM). Zeilenenden bleiben, wie sie sind
 (`:set ff?`); UXE-Dateien sind LF.
 
+Neue UXE werden in UTF-8 angelegt. Eine Latin-1-Datei (`fenc=latin1`) stellt man beim Ändern um:
+`:set fenc=utf-8` und dann `:w`. Der Interpreter liest beide Kodierungen.
+
 ### Prüfen
 
 Eine `.uxe`-Datei öffnen und `:set ft?` eingeben → `filetype=uxe`. Wird nichts hervorgehoben:
