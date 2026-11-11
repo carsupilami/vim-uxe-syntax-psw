@@ -75,13 +75,35 @@ installationen haben oft nur `vim.tiny` ohne Syntax-Highlighting → Paket `vim`
 ## Optionen
 
 ```vim
-let g:uxe_folding = 1        " Faltung je subroutine ... endsub (zo/zc/zR/zM)
+let g:uxe_folding = 1        " Faltung je subroutine ... endsub (Tasten: Abschnitt Faltung)
 let g:uxe_no_indent = 1      " eigene Einrückung abschalten (nur autoindent)
 let g:uxe_no_sysvar = 1      " GROSS geschriebene Systemvariablen nicht hervorheben
 let g:uxe_no_operators = 1   " Operatoren (&& || == ...) nicht hervorheben
 ```
 
 Die Optionen vor dem Öffnen der Datei setzen (vimrc).
+
+## Faltung
+
+Mit `let g:uxe_folding = 1` ist jede `subroutine ... endsub` eine Faltung.
+
+| Befehl | Wirkung |
+|---|---|
+| `zR` | alle Faltungen öffnen |
+| `zM` | alle Faltungen schließen (nur noch die `subroutine`-Köpfe) |
+| `zi` | Faltung ganz aus/ein, ein zweites `zi` stellt den Zustand wieder her |
+| `zo` / `zc` | Faltung unter dem Cursor öffnen / schließen |
+| `za` | Faltung unter dem Cursor umschalten |
+| `zv` | so weit öffnen, dass die Cursorzeile sichtbar ist |
+
+**Suchen:** Ein Treffer mit `/` öffnet seine Faltung automatisch (Standard von `foldopen`).
+Bewährt hat sich:
+
+1. `zM`: Übersicht, eine Zeile je Subroutine.
+2. `/suchbegriff`: nur die Subroutine mit dem Treffer geht auf.
+3. `zM` und `n`: wieder alles zu, weiter zum nächsten Treffer.
+
+Mit offenen Faltungen starten: `set foldlevelstart=99` in der vimrc.
 
 ## Aktualisieren
 
