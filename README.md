@@ -14,13 +14,16 @@ optionale Faltung je Subroutine. Läuft unter Windows und Linux mit Vim ≥ 8.0 
 ## Installation
 
 Empfohlen ist ein Klon als Vim-Paket (`pack/*/start`), dann genügt später ein `git pull`.
-Voraussetzung: SSH-Zugriff auf `git.epcdocker001` (siehe Skill `forgejo-client-setup`).
+Quelle: <https://github.com/carsupilami/vim-uxe-syntax-psw> (öffentlich, Klonen ohne Anmeldung).
+
+Vim unter Windows liest `%USERPROFILE%\vimfiles`, **nicht** `.vim`. Ein Plugin unter
+`%USERPROFILE%\.vim\pack\…` wird dort nie geladen.
 
 ### Linux
 
 ```sh
 mkdir -p ~/.vim/pack/epc/start
-git clone git@git.epcdocker001:epc/vim-uxe-syntax-psw.git ~/.vim/pack/epc/start/vim-uxe-syntax-psw
+git clone https://github.com/carsupilami/vim-uxe-syntax-psw.git ~/.vim/pack/epc/start/vim-uxe-syntax-psw
 ```
 
 ### Windows (Vim/gVim)
@@ -29,7 +32,7 @@ PowerShell:
 
 ```powershell
 New-Item -ItemType Directory -Force "$env:USERPROFILE\vimfiles\pack\epc\start"
-git clone git@git.epcdocker001:epc/vim-uxe-syntax-psw.git "$env:USERPROFILE\vimfiles\pack\epc\start\vim-uxe-syntax-psw"
+git clone https://github.com/carsupilami/vim-uxe-syntax-psw.git "$env:USERPROFILE\vimfiles\pack\epc\start\vim-uxe-syntax-psw"
 ```
 
 ### Neovim
